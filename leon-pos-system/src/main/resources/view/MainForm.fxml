@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="704.0" prefWidth="552.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.leon_pos.controller.MainFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="162.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="552.0">
+         <fill>
+            <LinearGradient endX="0.7238095238095239" endY="0.14285714285714282" startX="0.7190476190476194" startY="0.6333333333333333">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4225146174430847" green="0.6664960980415344" blue="0.8947368264198303" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="105.0" fitWidth="135.0" layoutX="213.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assert/logo-icon.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="138.0" layoutY="8.0" prefHeight="54.0" prefWidth="255.0" text="LEON POS" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="FreeSerif Bold" size="42.0" />
+         </font>
+      </Label>
+      <HBox layoutX="61.0" layoutY="190.0" prefHeight="428.0" prefWidth="430.0" spacing="50.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+         <children>
+            <VBox prefHeight="393.0" prefWidth="106.0">
+               <children>
+                  <ImageView fx:id="imgCustomer" fitHeight="100.0" fitWidth="92.0" onMouseClicked="#navigate" onMouseEntered="#iconOnMouseEntered" onMouseExited="#iconOnMouseExited" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assert/customers.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imgStock" fitHeight="87.0" fitWidth="110.0" onMouseClicked="#navigate" onMouseEntered="#iconOnMouseEntered" onMouseExited="#iconOnMouseExited" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assert/stock-icon.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imgOrder" fitHeight="90.0" fitWidth="94.0" onMouseClicked="#navigate" onMouseEntered="#iconOnMouseEntered" onMouseExited="#iconOnMouseExited" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assert/order-icon.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fx:id="imgSearch" fitHeight="87.0" fitWidth="110.0" onMouseClicked="#navigate" onMouseEntered="#iconOnMouseEntered" onMouseExited="#iconOnMouseExited" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assert/search-icon.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="20.0" prefHeight="408.0" prefWidth="664.0" spacing="20.0">
+               <children>
+                  <Label fx:id="lblMenu" alignment="BOTTOM_CENTER" prefHeight="139.0" prefWidth="274.0" text="Welcome to Smart POS System" textAlignment="CENTER" textFill="#3067ff" wrapText="true">
+                     <font>
+                        <Font name="FreeSerif Bold" size="32.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="lblDescription" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="295.0" text="Please select one of left side main operations to proceed" textAlignment="CENTER" textFill="#cc00ff" wrapText="true">
+                           <font>
+                              <Font name="FreeSerif" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Separator layoutX="8.0" layoutY="167.0" prefHeight="12.0" prefWidth="543.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="87.0" layoutY="626.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="552.0">
+         <fill>
+            <LinearGradient endX="0.7238095238095239" endY="0.99999999999" startX="0.7285714285714289" startY="0.39999999999999997">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4225146174430847" green="0.6664960980415344" blue="0.8947368264198303" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label alignment="CENTER" layoutX="16.0" layoutY="647.0" prefHeight="46.0" prefWidth="521.0" text="Copyright J.A.I. Lahiru All Rights Reserved." textFill="#0e0211" wrapText="true">
+         <font>
+            <Font name="FreeSerif" size="15.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
