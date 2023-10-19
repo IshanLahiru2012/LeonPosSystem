@@ -38,7 +38,7 @@ public class MainFormController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        FadeTransition fadeIn = new FadeTransition(Duration.millis(3000), root);
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(2000), root);
         fadeIn.setFromValue(0.0);
         fadeIn.setToValue(1.0);
         fadeIn.play();
@@ -145,7 +145,7 @@ public class MainFormController implements Initializable {
             primaryStage.centerOnScreen();
             primaryStage.setResizable(false);
             primaryStage.sizeToScene();
-            //primaryStage.setOnCloseRequest(null);
+            primaryStage.setOnCloseRequest(null);
         });
 
 
