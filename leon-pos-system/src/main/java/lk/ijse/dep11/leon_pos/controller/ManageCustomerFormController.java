@@ -112,7 +112,7 @@ public class ManageCustomerFormController {
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
 
-        
+
     }
 
     public void navigateToMain(MouseEvent mouseEvent) throws IOException {
