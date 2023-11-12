@@ -39,6 +39,11 @@
                 </LinearGradient>
             </fill>
       </Rectangle>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="13.0" prefHeight="35.0" prefWidth="1233.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="MANAGE ITEMS" textFill="#f8f6f6" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+                <Font name="System Bold" size="40.0" />
+            </font>
+        </Label>
         <ImageView id="imgHome" fitHeight="72.0" fitWidth="68.0" layoutX="22.0" layoutY="16.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -47,20 +52,15 @@
             <Image url="@../assert/home-icon.png" />
          </image>
         </ImageView>
-        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="13.0" prefHeight="35.0" prefWidth="1233.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="MANAGE ITEMS" textFill="#f8f6f6" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <font>
-                <Font name="System Bold" size="40.0" />
-            </font>
-        </Label>
       <HBox layoutX="22.0" layoutY="157.0" prefHeight="463.0" prefWidth="1101.0" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="120.0">
          <children>
             <VBox prefHeight="390.0" prefWidth="533.0" spacing="50.0">
                <children>
-                    <VBox prefHeight="377.0" prefWidth="533.0" spacing="20.0">
+                    <VBox prefHeight="496.0" prefWidth="523.0" spacing="50.0">
                         <children>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="533.0">
+                        <HBox alignment="CENTER_RIGHT" prefHeight="66.0" prefWidth="523.0">
                            <children>
-                                <JFXButton id="btnAddNewCustomer" fx:id="btnAddNew" onAction="#btnAddNew_OnAction" prefHeight="48.0" prefWidth="133.0" style="-fx-cursor: hand;" text="+ NEW ITEM" />
+                                <JFXButton id="btnAddNewCustomer" fx:id="btnAddNew" minHeight="-Infinity" onAction="#btnAddNew_OnAction" prefHeight="50.0" prefWidth="161.0" style="-fx-cursor: hand;" text="+ NEW ITEM" />
                            </children>
                         </HBox>
                             <JFXTextField fx:id="txtCode" labelFloat="true" prefHeight="41.0" prefWidth="533.0" promptText="Item Code :" />
@@ -69,8 +69,8 @@
                             <JFXTextField fx:id="txtUnitPrice" labelFloat="true" prefHeight="38.0" prefWidth="533.0" promptText="Unit Price" />
                         <HBox prefHeight="50.0" prefWidth="533.0" spacing="100.0">
                            <children>
-                                <JFXButton id="btnSave" fx:id="btnSave" onAction="#btnSave_OnAction" prefHeight="53.0" prefWidth="147.0" style="-fx-cursor: hand;" text="SAVE" />
-                                <JFXButton id="btnDelete" fx:id="btnDelete" onAction="#btnDelete_OnAction" prefHeight="49.0" prefWidth="140.0" style="-fx-cursor: hand;" text="DELETE" />
+                                <JFXButton id="btnSave" fx:id="btnSave" minHeight="-Infinity" onAction="#btnSave_OnAction" prefHeight="53.0" prefWidth="147.0" style="-fx-cursor: hand;" text="SAVE" />
+                                <JFXButton id="btnDelete" fx:id="btnDelete" minHeight="-Infinity" onAction="#btnDelete_OnAction" prefHeight="49.0" prefWidth="140.0" style="-fx-cursor: hand;" text="DELETE" />
                            </children>
                            <padding>
                               <Insets left="100.0" />
@@ -80,7 +80,7 @@
                     </VBox>
                </children>
             </VBox>
-              <TableView fx:id="tblItems" prefHeight="546.0" prefWidth="680.0">
+              <TableView fx:id="tblItems" prefHeight="546.0" prefWidth="680.0" HBox.hgrow="ALWAYS">
                   <columns>
                       <TableColumn minWidth="50.0" prefWidth="97.0" style="-fx-font-size: 16px; -fx-alignment: center;" text="Code" />
                       <TableColumn minWidth="50.0" prefWidth="204.0" style="-fx-font-size: 16px;" text="Description" />

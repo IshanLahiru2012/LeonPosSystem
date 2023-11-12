@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import lk.ijse.dep11.leon_pos.db.OrderData;
 import lk.ijse.dep11.leon_pos.tm.Order;
@@ -22,6 +23,7 @@ public class SearchOrderFormController {
     public TextField txtSearch;
     public TableView<Order> tblOrders;
     public AnchorPane root;
+    public Rectangle rectangle;
 
     public void initialize() throws IOException {
         String[] colNames = {"orderId", "orderDate", "customerId", "customerName", "orderTotal"};
@@ -43,6 +45,7 @@ public class SearchOrderFormController {
                 e.printStackTrace();
             }
         });
+        rectangle.widthProperty().bind(root.widthProperty());
     }
 
     public void tblOrders_OnMouseClicked(MouseEvent mouseEvent) {

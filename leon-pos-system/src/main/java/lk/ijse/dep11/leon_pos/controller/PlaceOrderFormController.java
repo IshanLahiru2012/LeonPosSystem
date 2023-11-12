@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import lk.ijse.dep11.leon_pos.db.CustomerData;
 import lk.ijse.dep11.leon_pos.db.ItemData;
 import lk.ijse.dep11.leon_pos.db.OrderData;
@@ -49,8 +50,10 @@ public class PlaceOrderFormController {
     public Label lblDate;
     public Label lblTotal;
     public JFXButton btnPlaceOrder;
+    public Rectangle rectangle;
 
     public void initialize() throws IOException {
+
         String[] cols = {"code", "description", "qty", "unitPrice", "total", "btnDelete"};
         for (int i = 0; i < cols.length; i++) {
             tblOrderDetails.getColumns().get(i).setCellValueFactory(new PropertyValueFactory<>(cols[i]));
@@ -69,6 +72,7 @@ public class PlaceOrderFormController {
                 txtCustomerName.setDisable(true);
             }
         });
+        rectangle.widthProperty().bind(root.widthProperty());
         cmbItemCode.getSelectionModel().selectedItemProperty().addListener((ov, prev, cur) -> {
             if (cur != null) {
                 txtDescription.setText(cur.getDescription());

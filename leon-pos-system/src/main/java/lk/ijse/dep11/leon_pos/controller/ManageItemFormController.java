@@ -42,7 +42,7 @@ public class ManageItemFormController {
     public Rectangle rectangle;
 
     public void initialize(){
-//        rectangle.widthProperty().bind(root.widthProperty());
+        rectangle.widthProperty().bind(root.widthProperty());
         tblItems.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("code"));
         tblItems.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("description"));
         tblItems.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("qty"));

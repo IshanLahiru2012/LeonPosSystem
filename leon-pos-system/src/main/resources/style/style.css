@@ -1,6 +1,9 @@
 * {
     -fx-font-family: FreeSerif;
 }
+#imgHome:hover{
+    -fx-effect: dropshadow(gaussian, rgba(21, 239, 207, 0.7),20,0.0,0,0);
+}
 
 .button, .text-field, .combo-box {
     -fx-font-size: 16px;

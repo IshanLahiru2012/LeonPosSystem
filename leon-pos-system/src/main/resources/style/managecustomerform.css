@@ -1,6 +1,4 @@
-#imgHome:hover{
-    -fx-effect: dropshadow(gaussian, #39d345,20,0.0,0,0);
-}
+
 #btnNew{
     -fx-background-color: #007bff;
     -fx-text-fill: white;
