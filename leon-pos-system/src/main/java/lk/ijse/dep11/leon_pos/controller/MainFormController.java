@@ -16,6 +16,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -34,14 +35,16 @@ public class MainFormController implements Initializable {
     public Label lblMenu;
     public Label lblDescription;
     public ImageView imgOrder;
+    public VBox vBoxContainer;
 
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        FadeTransition fadeIn = new FadeTransition(Duration.millis(2000), root);
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(200), root);
         fadeIn.setFromValue(0.0);
         fadeIn.setToValue(1.0);
         fadeIn.play();
+
     }
     public void navigate(MouseEvent mouseEvent) throws IOException {
         if(mouseEvent.getSource() instanceof ImageView){
@@ -68,19 +71,17 @@ public class MainFormController implements Initializable {
                 Scene subScene = new Scene(subRoot);
                 Platform.runLater(()->{
                     Stage primaryStage = (Stage) root.getScene().getWindow();
-                    primaryStage.setResizable(false);
+                    primaryStage.setResizable(true);
                     primaryStage.setScene(subScene);
                     primaryStage.sizeToScene();
                     primaryStage.centerOnScreen();
                     primaryStage.setOnCloseRequest(Event::consume);
 
                     TranslateTransition trans = new TranslateTransition(Duration.millis(200), subScene.getRoot());
-                    trans.setFromX(-subScene.getWidth());
-                    trans.setToX(0);
+                    trans.setFromY(subScene.getWidth());
+                    trans.setToY(0);
                     trans.play();
-
                 });
-
             }
 
         }
@@ -127,7 +128,7 @@ public class MainFormController implements Initializable {
             ImageView instance = (ImageView) mouseEvent.getSource();
             instance.setEffect(null);
             lblMenu.setText("Welcome to Smart POS System");
-            lblDescription.setText("Please select one of above main operations to proceed");
+            lblDescription.setText("Please select one of main operations to proceed");
 
             ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(200),instance);
             scaleTransition.setToX(1);
@@ -139,14 +140,18 @@ public class MainFormController implements Initializable {
     public static void navigateToMain(Node rootNode) throws IOException {
         Parent root = FXMLLoader.load(AppInitializer.class.getResource("/view/MainForm.fxml"));
         Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) rootNode.getScene().getWindow();
+        Stage subStage = (Stage) rootNode.getScene().getWindow();
+        Stage primaryStage = new Stage();
+
         Platform.runLater(()->{
             primaryStage.setScene(scene);
             primaryStage.centerOnScreen();
             primaryStage.setResizable(false);
             primaryStage.sizeToScene();
             primaryStage.setOnCloseRequest(null);
+            primaryStage.show();
         });
+        subStage.close();
 
 
     }

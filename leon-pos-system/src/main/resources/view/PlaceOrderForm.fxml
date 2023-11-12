@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.dep11.leon_pos.controller.PlaceOrderFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1161.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.leon_pos.controller.PlaceOrderFormController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="111.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1161.0">
+            <fill>
+                <LinearGradient endX="0.04807692307692308" endY="0.9924908424908425" startX="0.047619047619047616" startY="0.5047619047619047">
+                    <stops>
+                        <Stop>
+                     <color>
+                        <Color red="0.9700000286102295" green="0.426800012588501" blue="0.426800012588501" />
+                     </color></Stop>
+                        <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color></Stop>
+                    </stops>
+                </LinearGradient>
+            </fill></Rectangle>
+        <ImageView id="imgHome" fitHeight="53.0" fitWidth="55.0" layoutX="22.0" layoutY="16.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assert/home-icon.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </ImageView>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="17.0" prefHeight="40.0" prefWidth="1141.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="PLACE ORDER" textFill="#fcf9f9" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <font>
+                <Font name="FreeSerif" size="40.0" />
+            </font>
+        </Label>
+        <!--      <JFXButton id="btnAddNewOrder" fx:id="btnAddNewOrder" layoutX="518.0" layoutY="25.0" onAction="#btnAddNew_OnAction" prefHeight="35.0" prefWidth="122.0" style="-fx-cursor: hand; -fx-background-color: #007bff; -fx-text-fill: white;" text="+ New Order" />-->
+        <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="14.0" layoutY="198.0" prefHeight="29.0" prefWidth="236.0" promptText="Customer Name :" />
+        <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="488.0" layoutY="132.0" prefHeight="29.0" prefWidth="492.0" promptText="Item Description :" />
+        <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="287.0" layoutY="200.0" prefHeight="28.0" prefWidth="161.0" promptText="Qty. on Hand" />
+        <JFXButton id="btnAdd" fx:id="btnAdd" layoutX="1040.0" layoutY="160.0" onAction="#btnAddOnAction" prefHeight="53.0" prefWidth="74.0" style="-fx-cursor: hand;" text="ADD" />
+        <TableView fx:id="tblOrderDetails" layoutX="17.0" layoutY="280.0" prefHeight="295.0" prefWidth="1105.0">
+            <columns>
+                <TableColumn prefWidth="77.0" style="-fx-font-size: 14px;" text="Code" />
+                <TableColumn prefWidth="174.0" style="-fx-font-size: 14px;" text="Description" />
+                <TableColumn prefWidth="64.0" style="-fx-font-size: 14px;" text="Qty" />
+                <TableColumn prefWidth="99.0" style="-fx-font-size: 14px;" text="Unit Price" />
+                <TableColumn prefWidth="88.0" style="-fx-font-size: 14px;" text="Total" />
+                <TableColumn prefWidth="99.0" style="-fx-font-size: 14px;" text="Delete" />
+            </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+        </TableView>
+        <JFXTextField fx:id="txtUnitPrice" labelFloat="true" layoutX="488.0" layoutY="200.0" prefHeight="29.0" prefWidth="236.0" promptText="Unit Price" />
+        <JFXComboBox fx:id="cmbCustomerId" labelFloat="true" layoutX="14.0" layoutY="136.0" prefHeight="25.0" prefWidth="236.0" promptText="Customer ID :" />
+        <JFXComboBox fx:id="cmbItemCode" labelFloat="true" layoutX="287.0" layoutY="132.0" prefHeight="29.0" prefWidth="161.0" promptText="Item Code :" />
+        <!--      <JFXTextField fx:id="txtQty" onKeyPressed="#txtQty_OnKeyPressed" labelFloat="true" layoutX="370.0" layoutY="226.0" prefHeight="28.0" prefWidth="161.0" promptText="Qty." />-->
+        <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="747.0" layoutY="198.0" onAction="#txtQty_OnAction" prefHeight="29.0" prefWidth="236.0" promptText="Qty." />
+        <Label fx:id="lblId" alignment="CENTER_RIGHT" layoutX="995.0" layoutY="45.0" prefHeight="24.0" prefWidth="152.0" text="ORDER ID : OD001">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="993.0" layoutY="70.0" prefHeight="24.0" prefWidth="152.0" text="2023-10-12">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Label>
+        <Label fx:id="lblTotal" layoutX="496.0" layoutY="583.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="TOTAL : 0.00">
+            <font>
+                <Font size="32.0" />
+            </font>
+        </Label>
+        <JFXButton id="btnSave" fx:id="btnPlaceOrder" layoutX="970.0" layoutY="599.0" onAction="#btnPlaceOrderOnAction" prefHeight="80.0" prefWidth="152.0" style="-fx-cursor: hand; -fx-background-color: orange; -fx-text-fill: black; -fx-font-size: 16px;" text="PLACE ORDER" />
+    </children>
+    <stylesheets>
+        <URL value="@../style/manageitemform.css" />
+        <URL value="@../style/style.css" />
+    </stylesheets>
 </AnchorPane>

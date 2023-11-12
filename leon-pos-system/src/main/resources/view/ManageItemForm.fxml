@@ -1,14 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.dep11.leon_pos.controller.ManageItemFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1233.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.leon_pos.controller.ManageItemFormController">
+    <children>
+        <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" height="116.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1233.0">
+            <fill>
+                <LinearGradient endX="0.18141025641025638" endY="0.8401098901098901" startX="0.18095238095238095" startY="0.49047619047619045">
+                    <stops>
+                        <Stop>
+                     <color>
+                        <Color red="0.8899999856948853" green="0.4361000061035156" blue="0.4361000061035156" />
+                     </color>
+                  </Stop>
+                        <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+      </Rectangle>
+        <ImageView id="imgHome" fitHeight="72.0" fitWidth="68.0" layoutX="22.0" layoutY="16.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+         <image>
+            <Image url="@../assert/home-icon.png" />
+         </image>
+        </ImageView>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="13.0" prefHeight="35.0" prefWidth="1233.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="MANAGE ITEMS" textFill="#f8f6f6" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <font>
+                <Font name="System Bold" size="40.0" />
+            </font>
+        </Label>
+      <HBox layoutX="22.0" layoutY="157.0" prefHeight="463.0" prefWidth="1101.0" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <VBox prefHeight="390.0" prefWidth="533.0" spacing="50.0">
+               <children>
+                    <VBox prefHeight="377.0" prefWidth="533.0" spacing="20.0">
+                        <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="533.0">
+                           <children>
+                                <JFXButton id="btnAddNewCustomer" fx:id="btnAddNew" onAction="#btnAddNew_OnAction" prefHeight="48.0" prefWidth="133.0" style="-fx-cursor: hand;" text="+ NEW ITEM" />
+                           </children>
+                        </HBox>
+                            <JFXTextField fx:id="txtCode" labelFloat="true" prefHeight="41.0" prefWidth="533.0" promptText="Item Code :" />
+                            <JFXTextField fx:id="txtDescription" labelFloat="true" prefHeight="35.0" prefWidth="533.0" promptText="Item Description :" />
+                            <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" prefHeight="38.0" prefWidth="533.0" promptText="Qty. on Hand" />
+                            <JFXTextField fx:id="txtUnitPrice" labelFloat="true" prefHeight="38.0" prefWidth="533.0" promptText="Unit Price" />
+                        <HBox prefHeight="50.0" prefWidth="533.0" spacing="100.0">
+                           <children>
+                                <JFXButton id="btnSave" fx:id="btnSave" onAction="#btnSave_OnAction" prefHeight="53.0" prefWidth="147.0" style="-fx-cursor: hand;" text="SAVE" />
+                                <JFXButton id="btnDelete" fx:id="btnDelete" onAction="#btnDelete_OnAction" prefHeight="49.0" prefWidth="140.0" style="-fx-cursor: hand;" text="DELETE" />
+                           </children>
+                           <padding>
+                              <Insets left="100.0" />
+                           </padding>
+                        </HBox>
+                        </children>
+                    </VBox>
+               </children>
+            </VBox>
+              <TableView fx:id="tblItems" prefHeight="546.0" prefWidth="680.0">
+                  <columns>
+                      <TableColumn minWidth="50.0" prefWidth="97.0" style="-fx-font-size: 16px; -fx-alignment: center;" text="Code" />
+                      <TableColumn minWidth="50.0" prefWidth="204.0" style="-fx-font-size: 16px;" text="Description" />
+                      <TableColumn minWidth="8.0" prefWidth="111.0" style="-fx-font-size: 16px; -fx-alignment: center;" text="Qty. on Hand" />
+                      <TableColumn prefWidth="155.0" style="-fx-font-size: 16px;" text="Unit Price" />
+                  </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+              </TableView>
+         </children>
+      </HBox>
+    </children>
+    <stylesheets>
+        <URL value="@../style/manageitemform.css" />
+        <URL value="@../style/style.css" />
+    </stylesheets>
 </AnchorPane>

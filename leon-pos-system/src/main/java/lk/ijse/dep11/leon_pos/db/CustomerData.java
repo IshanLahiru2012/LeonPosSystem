@@ -31,7 +31,7 @@ public class CustomerData {
             throw new RuntimeException(e);
         }
     }
-    public static void insertCustomer(Customer customer) throws SQLException {
+    public static void saveCustomer(Customer customer) throws SQLException {
         STM_INSERT.setString(1,customer.getId());
         STM_INSERT.setString(2,customer.getName());
         STM_INSERT.setString(3,customer.getAddress());

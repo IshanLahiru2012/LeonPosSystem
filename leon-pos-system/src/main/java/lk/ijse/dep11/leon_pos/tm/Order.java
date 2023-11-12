@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
@@ -14,5 +15,5 @@ public class Order implements Serializable {
     private String orderDate;
     private String customerId;
     private String customerName;
-    private String orderTotal;
+    private BigDecimal orderTotal;
 }

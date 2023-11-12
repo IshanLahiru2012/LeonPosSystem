@@ -1,8 +1,11 @@
 * {
-    -fx-font-family: "Ubuntu", Serif;
+    -fx-font-family: FreeSerif;
 }
 
 .button, .text-field, .combo-box {
-    -fx-font-size: 14px;
+    -fx-font-size: 16px;
     -fx-font-weight: bold;
+    -fx-text-fill: #ea700d;
+
 }
+
