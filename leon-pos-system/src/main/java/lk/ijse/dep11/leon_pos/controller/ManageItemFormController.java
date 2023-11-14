@@ -42,7 +42,6 @@ public class ManageItemFormController {
     public Rectangle rectangle;
 
     public void initialize(){
-        rectangle.widthProperty().bind(root.widthProperty());
         tblItems.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("code"));
         tblItems.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("description"));
         tblItems.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("qty"));
@@ -55,6 +54,7 @@ public class ManageItemFormController {
             new Alert(Alert.AlertType.ERROR, "Failed to load items, try later").show();
             e.printStackTrace();
         }
+        rectangle.widthProperty().bind(root.widthProperty());
         Platform.runLater(txtCode::requestFocus);
         tblItems.getSelectionModel().selectedItemProperty().addListener((ov, prev, cur)->{
             if (cur == null){

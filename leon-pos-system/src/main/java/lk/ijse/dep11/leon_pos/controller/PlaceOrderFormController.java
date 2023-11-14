@@ -93,12 +93,7 @@ public class PlaceOrderFormController {
         });
         txtQty.textProperty().addListener((ov, prevQty, curQty) -> {
             Item selectedItem = cmbItemCode.getSelectionModel().getSelectedItem();
-//            btnSave.setDisable(true);
-//            if (cur.matches("\\d+")){
-//                if (Integer.parseInt(cur) <= selectedItem.getQty() && Integer.parseInt(cur) > 0){
-//                    btnSave.setDisable(false);
-//                }
-//            }
+
             btnAdd.setDisable(!(curQty.matches("\\d+") && Integer.parseInt(curQty) <= selectedItem.getQty()
                     && Integer.parseInt(curQty) > 0));
         });
@@ -128,7 +123,7 @@ public class PlaceOrderFormController {
                 lblId.setText(String.format("Order ID: OD%03d", newOrderId));
             }
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, "Failed to establish database connection, try later").show();
+            new Alert(Alert.AlertType.ERROR, "Unable to establish database connection, please try later !").show();
             e.printStackTrace();
             navigateToHome(null);
         }
@@ -193,7 +188,7 @@ public class PlaceOrderFormController {
             newOrder();
         } catch (SQLException e) {
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Failed to save the order, try again").show();
+            new Alert(Alert.AlertType.ERROR, "Unable to save the order, please try again !").show();
         }
     }
 

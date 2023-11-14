@@ -46,8 +46,6 @@ public class ManageCustomerFormController {
 
     public void initialize() {
         rectangle.widthProperty().bind(root.widthProperty());
-
-
         tblCustomer.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
         tblCustomer.getColumns().get(0).setStyle("-fx-alignment: center;");
         tblCustomer.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -60,7 +58,7 @@ public class ManageCustomerFormController {
             tblCustomer.getItems().addAll(CustomerData.getAllCustomer());
         } catch (SQLException e) {
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Failed to load customers, try later!").show();
+            new Alert(Alert.AlertType.ERROR, "Unable to load customers, please try later !").show();
         }
         tblCustomer.getSelectionModel().selectedItemProperty().addListener((ov, prev, cur) ->{
             if (cur != null){
@@ -92,7 +90,7 @@ public class ManageCustomerFormController {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Failed to establish the database connection, try again").show();
+            new Alert(Alert.AlertType.ERROR, "Unable to establish the database connection, please try again !").show();
             navigateToMain(null);
         }
     }
@@ -116,7 +114,7 @@ public class ManageCustomerFormController {
             btnNew.fire();
         } catch (SQLException e) {
             e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Failed to save the customer, try again").show();
+            new Alert(Alert.AlertType.ERROR, "Unable to save the customer, please try again !").show();
         }
     }
 

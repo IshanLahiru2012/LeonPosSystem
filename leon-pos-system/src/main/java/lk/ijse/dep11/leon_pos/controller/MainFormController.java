@@ -40,7 +40,7 @@ public class MainFormController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        FadeTransition fadeIn = new FadeTransition(Duration.millis(200), root);
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(250), root);
         fadeIn.setFromValue(0.0);
         fadeIn.setToValue(1.0);
         fadeIn.play();
@@ -77,7 +77,7 @@ public class MainFormController implements Initializable {
                     primaryStage.centerOnScreen();
                     primaryStage.setOnCloseRequest(Event::consume);
 
-                    TranslateTransition trans = new TranslateTransition(Duration.millis(200), subScene.getRoot());
+                    TranslateTransition trans = new TranslateTransition(Duration.millis(250), subScene.getRoot());
                     trans.setFromY(subScene.getWidth());
                     trans.setToY(0);
                     trans.play();
@@ -108,7 +108,7 @@ public class MainFormController implements Initializable {
                     lblDescription.setText("Click if you want to search orders");
                     break;
             }
-            ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(200), instance);
+            ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(250), instance);
             scaleTransition.setToX(1.2);
             scaleTransition.setToY(1.2);
             scaleTransition.play();
@@ -130,7 +130,7 @@ public class MainFormController implements Initializable {
             lblMenu.setText("Welcome to Smart POS System");
             lblDescription.setText("Please select one of main operations to proceed");
 
-            ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(200),instance);
+            ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(250),instance);
             scaleTransition.setToX(1);
             scaleTransition.setToY(1);
             scaleTransition.play();
